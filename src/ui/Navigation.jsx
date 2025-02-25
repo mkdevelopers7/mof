@@ -6,7 +6,7 @@ function Navigation() {
     <div>
       <div className=" bg-green-600  flex items-center justify-between px-8 md:px-16 py-4 ">
         <h1 className="uppercase text-stone-100 text-3xl font-semibold  text-center">
-          Ministry of Finanace
+          Finance Ministry
         </h1>
         <p className="text-lg text-slate-200 font-normal">
           Total {totalBalance >= 0 ? "Debt" : "Credit"} :
