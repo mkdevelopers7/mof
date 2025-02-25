@@ -8,7 +8,7 @@ function UserItem({ user }) {
       </div>
       <span
         className={`${
-          hasDebit ? "bg-red-400" : "bg-green-400"
+          hasDebit ? "bg-red-400" : "bg-green-500"
         }  text-stone-200 px-2 text-xs font-semibold py-[2px] rounded-full`}
       >
         {balance > 0 ? "Debit" : "Credit"}
