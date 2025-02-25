@@ -4,9 +4,9 @@ import SideBar from "./SideBar";
 
 function Ledger() {
   return (
-    <div className="flex">
+    <div className="flex flex-col-reverse sm:flex sm:flex-row">
       <SideBar />
-      <div className="bg-slate-300 rounded-[15px] mx-auto w-[70%]">
+      <div className="bg-slate-300 rounded-[15px] mx-auto sm:w-[70%]">
         <header className="border-b-4 flex items-center justify-between px-3 py-4 border-slate-200">
           <h1 className="text-2xl text-green-500  font-medium uppercase">
             User Balance
