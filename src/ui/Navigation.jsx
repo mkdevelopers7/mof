@@ -2,11 +2,12 @@ import { useUsers } from "../features/users/userContext";
 
 function Navigation() {
   const { totalBalance } = useUsers();
+
   return (
     <div>
       <div className=" bg-green-600  flex items-center justify-between px-4 sm:px-8 md:px-16 py-4 ">
         <h1 className="uppercase text-stone-100 text-xl sm:text-3xl font-semibold">
-          Finance Ministry
+          <a href="https://financeministry.vercel.app">Finance Ministry</a>
         </h1>
         <p className=" text-xs sm:text-lg text-slate-200 font-normal">
           Total {totalBalance >= 0 ? "Debt" : "Credit"} :
