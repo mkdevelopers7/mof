@@ -5,7 +5,6 @@ import { UserProvider } from "../features/users/userContext";
 function HomePage() {
   return (
     <UserProvider>
-      <Navigation />
       <Main />
     </UserProvider>
   );

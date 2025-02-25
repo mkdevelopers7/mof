@@ -4,7 +4,7 @@ function Navigation() {
   const { totalBalance } = useUsers();
 
   return (
-    <div>
+    <div className="mb-5 sm:mb-10">
       <div className=" bg-green-600  flex items-center justify-between px-4 sm:px-8 md:px-16 py-4 ">
         <h1 className="uppercase text-stone-100 text-xl sm:text-3xl font-semibold">
           <a href="https://financeministry.vercel.app">Finance Ministry</a>
