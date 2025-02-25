@@ -1,7 +1,6 @@
-import { useEffect } from "react";
-
 const SUPABASE_URL =
   "https://ogpmkkjrcwllaxsepxvr.supabase.co/rest/v1/user_balance";
+export const PassKey = "financeministry0938";
 const SUPABASE_API_KEY =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9ncG1ra2pyY3dsbGF4c2VweHZyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDAyNDc2NTcsImV4cCI6MjA1NTgyMzY1N30.UVmYhasu8RnYUO9jLxI5uAuLmk2qaIFW03ubMMMmbF0";
 

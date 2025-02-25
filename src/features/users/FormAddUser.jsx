@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from "../../ui/Button";
 import { useMutation } from "@tanstack/react-query";
-import { addUserAPI } from "./userSlice";
+import { addUserAPI, PassKey } from "./userSlice";
 import { useNavigate } from "react-router-dom";
 
 function FormAddUser() {
@@ -23,6 +23,7 @@ function FormAddUser() {
     e.preventDefault();
     const data = new FormData(e.target);
     const formData = Object.fromEntries(data);
+    if (formData.key !== PassKey) alert("Wrong Access Key. Try Again");
 
     mutate(formData);
   }
@@ -50,6 +51,16 @@ function FormAddUser() {
             placeholder="Initial Balance..."
             value={initialBalance}
             onChange={(e) => setInitialBalance(e.target.value)}
+          />
+        </div>
+        <div className="grid grid-cols-[1fr] sm:grid-cols-[120px,1fr] items-center sm:gap-4 gap-2">
+          <label className="text-stone-700 text-lg">Access Key</label>
+          <input
+            required
+            className="input2"
+            type="text"
+            name="key"
+            placeholder="Type Access Key..."
           />
         </div>
         <div className="text-center sm:text-right">

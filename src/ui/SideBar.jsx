@@ -8,7 +8,7 @@ function SideBar() {
         <Link to="entry">New Entry</Link>
       </Button>
       <Button type="sidebar" color="green">
-        <Link to="entry">Make Deposit</Link>
+        <Link to="#">Make Deposit</Link>
       </Button>
       <Button type="sidebar" color="green">
         <Link to="/adduser">Add User</Link>

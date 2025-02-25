@@ -4,6 +4,7 @@ import { useMutation } from "@tanstack/react-query";
 import { addNewEntryAPI } from "./entriesSlice";
 import Loader from "../../ui/Loader";
 import { useNavigate } from "react-router-dom";
+import { PassKey } from "../users/userSlice";
 
 function NewEntryForm({ users }) {
   const navigate = useNavigate();
@@ -36,6 +37,8 @@ function NewEntryForm({ users }) {
     e.preventDefault();
     const data = new FormData(e.target);
     const formData = Object.fromEntries(data);
+
+    if (formData.key !== PassKey) alert("Wrong Access Key. Try Again");
 
     const newEntry = {
       totalAmount: Number(formData.totalAmount),
@@ -88,6 +91,16 @@ function NewEntryForm({ users }) {
             </option>
           ))}
         </select>
+      </div>
+      <div className="grid grid-cols-[1fr] sm:grid-cols-[160px,1fr] gap-2 sm:gap-4">
+        <label>Access Key:</label>
+        <input
+          className="input2"
+          type="text"
+          name="key"
+          placeholder="Enter Access Key..."
+          required
+        />
       </div>
 
       {/* <div className="flex items-center gap-4"> */}
