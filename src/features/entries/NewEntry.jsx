@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import NewEntryForm from "./NewEntryForm";
 import { fetchUsers } from "../users/userSlice";
+import Loader from "../../ui/Loader";
 
 function NewEntry() {
   // const { users } = useUsers();
@@ -8,7 +9,7 @@ function NewEntry() {
     queryKey: ["users2"],
     queryFn: fetchUsers,
   });
-  if (isPending) return <h2>Loading...</h2>;
+  if (isPending) return <Loader />;
   if (!users) return;
 
   return (
