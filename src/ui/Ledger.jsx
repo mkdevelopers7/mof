@@ -8,7 +8,7 @@ function Ledger() {
       <SideBar />
       <div className="bg-slate-300 rounded-[15px] mx-auto sm:w-[70%]">
         <header className="border-b-4 flex items-center justify-between px-3 py-4 border-slate-200">
-          <h1 className="text-2xl text-green-500  font-medium uppercase">
+          <h1 className="text-xl sm:text-2xl text-green-500  font-medium uppercase">
             User Balance
           </h1>
           <p className="text-slate-700 text-[13px] flex flex-col sm:block">

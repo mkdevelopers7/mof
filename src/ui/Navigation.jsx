@@ -8,7 +8,7 @@ function Navigation() {
         <h1 className="uppercase text-stone-100 text-xl sm:text-3xl font-semibold">
           Finance Ministry
         </h1>
-        <p className=" text-normal sm:text-lg text-slate-200 font-normal">
+        <p className=" text-xs sm:text-lg text-slate-200 font-normal">
           Total {totalBalance >= 0 ? "Debt" : "Credit"} :
           <span className="font-bold"> {totalBalance}</span>
         </p>

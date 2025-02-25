@@ -12,7 +12,7 @@ function Entry() {
   return (
     <div>
       <header className="border-t-[20px] border-b-4 flex items-center justify-between px-3 py-4 border-slate-200">
-        <h1 className="text-2xl text-green-500  font-medium uppercase">
+        <h1 className="text-xl sm:text-2xl text-green-500  font-medium uppercase">
           Entries
         </h1>
       </header>
