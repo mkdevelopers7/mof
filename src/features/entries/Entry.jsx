@@ -17,21 +17,21 @@ function Entry() {
         </h1>
       </header>
 
-      <div className="grid grid-cols-[0.5fr,1fr,1fr,1fr,1fr] items-center py-2 px-3 border-b ">
+      <div className="grid gap-2 grid-cols-[0.5fr,1fr,1fr,1fr,1fr] items-center py-2 px-3 border-b ">
         <div>
-          <span className=" text-stone-600 font-semibold">Id</span>
+          <span className=" text-stone-600 font-semibold ">Id</span>
         </div>
         <div>
-          <span className="text-stone-600 font-semibold">Paid By</span>
+          <span className="text-stone-600 font-semibold ">Paid By</span>
         </div>
         <div>
-          <span className="text-stone-600 font-semibold">Purpose</span>
+          <span className="text-stone-600 font-semibold ">Purpose</span>
         </div>
         <div>
-          <span className="text-stone-600 font-semibold">Amount</span>
+          <span className="text-stone-600 font-semibold ">Amount</span>
         </div>
         <div>
-          <span className="text-stone-600 font-semibold">Per Head</span>
+          <span className="text-stone-600 font-semibold ">Share</span>
         </div>
       </div>
 
