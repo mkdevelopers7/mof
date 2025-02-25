@@ -58,7 +58,7 @@ function FormAddUser() {
           <input
             required
             className="input2"
-            type="text"
+            type="password"
             name="key"
             placeholder="Type Access Key..."
           />

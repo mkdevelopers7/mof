@@ -53,7 +53,7 @@ function NewEntryForm({ users }) {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4 px-5 py-6">
-      <div className="grid grid-cols-[1fr] sm:grid-cols-[160px,1fr] gap-2 sm:gap-4">
+      <div className="grid grid-cols-[1fr] sm:grid-cols-[160px,1fr] gap-2 items-center sm:gap-4">
         <label>Total Amount Spent:</label>
         <input
           className="input2"
@@ -63,7 +63,7 @@ function NewEntryForm({ users }) {
           required
         />
       </div>
-      <div className="grid grid-cols-[1fr] sm:grid-cols-[160px,1fr] gap-2 sm:gap-4">
+      <div className="grid grid-cols-[1fr] sm:grid-cols-[160px,1fr] gap-2 items-center sm:gap-4">
         <label>Purpose of Payment:</label>
         <select name="purpose" className="input2">
           <option value="breakfast">Breakfast</option>
@@ -74,7 +74,7 @@ function NewEntryForm({ users }) {
         </select>
       </div>
 
-      <div className="grid grid-cols-[1fr] sm:grid-cols-[160px,1fr] gap-2 sm:gap-4">
+      <div className="items-center grid grid-cols-[1fr] sm:grid-cols-[160px,1fr] gap-2 sm:gap-4">
         <label>Paid By:</label>
         <select
           className="input2 accent-green-500"
@@ -92,11 +92,11 @@ function NewEntryForm({ users }) {
           ))}
         </select>
       </div>
-      <div className="grid grid-cols-[1fr] sm:grid-cols-[160px,1fr] gap-2 sm:gap-4">
+      <div className="items-center grid grid-cols-[1fr] sm:grid-cols-[160px,1fr] gap-2 sm:gap-4">
         <label>Access Key:</label>
         <input
           className="input2"
-          type="text"
+          type="password"
           name="key"
           placeholder="Enter Access Key..."
           required
@@ -104,11 +104,11 @@ function NewEntryForm({ users }) {
       </div>
 
       {/* <div className="flex items-center gap-4"> */}
-      <div className="grid grid-cols-[1fr] sm:grid-cols-[160px,1fr] gap-2 sm:gap-4">
+      <div className="items-center grid grid-cols-[1fr] sm:grid-cols-[160px,1fr] gap-2 sm:gap-4">
         <legend>Consumers:</legend>
-        <div className="space-x-3">
+        <div className="space-x-2">
           {users.map((user) => (
-            <label key={user.id} className="">
+            <label key={user.id} className="text-sm">
               <input
                 type="checkbox"
                 className="accent-green-500"
