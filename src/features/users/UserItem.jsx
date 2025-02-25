@@ -14,7 +14,7 @@ function UserItem({ user }) {
         {balance > 0 ? "Debit" : "Credit"}
       </span>
       <span className="text-green-700 justify-self-end text-sm font-semibold">
-        {balance}
+        {balance.toFixed(0)}
       </span>
     </div>
   );

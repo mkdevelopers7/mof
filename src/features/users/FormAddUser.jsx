@@ -29,11 +29,11 @@ function FormAddUser() {
   return (
     <div className="py-5 px-4  items-center">
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-        <div className="grid grid-cols-[120px,1fr] items-center gap-4">
+        <div className="grid grid-cols-[1fr] sm:grid-cols-[120px,1fr] items-center sm:gap-4 gap-2">
           <label className="text-stone-700 text-lg">Full Name</label>
           <input
             required
-            className="input w-full"
+            className="input2"
             type="text"
             name="name"
             placeholder="Write User's full name..."
@@ -41,10 +41,10 @@ function FormAddUser() {
             onChange={(e) => setName(e.target.value)}
           />
         </div>
-        <div className="grid grid-cols-[120px,1fr] items-center gap-4">
+        <div className="grid grid-cols-[1fr] sm:grid-cols-[120px,1fr] items-center sm:gap-4 gap-2">
           <label className="text-stone-700 text-lg">Initial Balance</label>
           <input
-            className="input w-full"
+            className="input2"
             type="number"
             name="initialBalance"
             placeholder="Initial Balance..."
@@ -52,7 +52,7 @@ function FormAddUser() {
             onChange={(e) => setInitialBalance(e.target.value)}
           />
         </div>
-        <div className="text-right">
+        <div className="text-center sm:text-right">
           <Button type="primary">Add User</Button>
         </div>
       </form>

@@ -3,7 +3,7 @@ function EntryItem({ entry }) {
   const perHead = totalAmount / usersCharged.length;
   // return <div>Entry id:{entry.id}</div>;
   return (
-    <div className="grid grid-cols-[0.5fr,1fr,1fr,1fr,1fr] items-center py-2 px-3 border-b-[1px]">
+    <div className="grid gap-2 grid-cols-[0.5fr,1fr,1fr,1fr,1fr] items-center py-2 px-3 border-b-[1px]">
       <div>
         <span className=" text-stone-600 text-[14px]">{id}</span>
       </div>
@@ -19,7 +19,7 @@ function EntryItem({ entry }) {
         <span className="text-stone-600 text-[14px]">{totalAmount}</span>
       </div>
       <div>
-        <span className="text-stone-600 text-[14px]">{perHead}</span>
+        <span className="text-stone-600 text-[14px]">{perHead.toFixed(0)}</span>
       </div>
     </div>
   );

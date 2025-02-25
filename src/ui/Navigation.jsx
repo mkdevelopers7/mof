@@ -10,7 +10,7 @@ function Navigation() {
         </h1>
         <p className=" text-xs sm:text-lg text-slate-200 font-normal">
           Total {totalBalance >= 0 ? "Debt" : "Credit"} :
-          <span className="font-bold"> {totalBalance}</span>
+          <span className="font-bold"> {totalBalance.toFixed(0)}</span>
         </p>
       </div>
     </div>
