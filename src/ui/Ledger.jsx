@@ -11,7 +11,7 @@ function Ledger() {
           <h1 className="text-2xl text-green-500  font-medium uppercase">
             User Balance
           </h1>
-          <p className="text-slate-700 text-[13px]">
+          <p className="text-slate-700 text-[13px] flex flex-col sm:block">
             <span className="text-slate-500">Last Updated:</span>{" "}
             <span className="text-xs font-semibold">24 Feb 2025, 19:34</span>
           </p>

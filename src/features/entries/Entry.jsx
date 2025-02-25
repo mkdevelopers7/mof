@@ -28,7 +28,7 @@ function Entry() {
           <span className="text-stone-600 font-semibold">Purpose</span>
         </div>
         <div>
-          <span className="text-stone-600 font-semibold">Total Amount</span>
+          <span className="text-stone-600 font-semibold">Amount</span>
         </div>
         <div>
           <span className="text-stone-600 font-semibold">Per Head</span>

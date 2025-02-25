@@ -137,7 +137,7 @@ function NewEntryForm({ users }) {
 
       {/* <div className="flex items-center gap-4"> */}
       <div className="grid grid-cols-[160px,1fr] gap-4">
-        <legend>Select Users:</legend>
+        <legend>Consumers:</legend>
         <div className="space-x-3">
           {users.map((user) => (
             <label key={user.id} className="">
