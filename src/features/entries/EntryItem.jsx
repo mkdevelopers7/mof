@@ -51,7 +51,7 @@ function EntryItem({ entry, index }) {
             </span>
           ))}
         </div>
-        <div className="text-[10px] font-normal text-stone-600">
+        <div className="text-[10px] hidden sm:block font-normal text-stone-600">
           {formatDateShort(created_at)}
         </div>
       </div>

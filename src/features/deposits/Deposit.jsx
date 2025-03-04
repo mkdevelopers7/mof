@@ -27,16 +27,18 @@ function Deposit() {
         }`}
       >
         <div>
-          <span className=" text-stone-600 font-semibold ">Id</span>
+          <span className=" text-stone-600 font-semibold text-sm">Id</span>
         </div>
         <div>
-          <span className="text-stone-600 font-semibold ">Deposited By</span>
+          <span className="text-stone-600 font-semibold text-sm">
+            Depositer
+          </span>
         </div>
         <div>
-          <span className="text-stone-600 font-semibold ">Amount</span>
+          <span className="text-stone-600 font-semibold text-sm">Amount</span>
         </div>
         <div>
-          <span className="text-stone-600 font-semibold ">Date</span>
+          <span className="text-stone-600 font-semibold text-sm">Date</span>
         </div>
         {/* <div>
           <span className="text-stone-600 font-semibold ">Share</span>

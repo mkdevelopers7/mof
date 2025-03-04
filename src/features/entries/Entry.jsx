@@ -45,19 +45,19 @@ function Entry() {
         }`}
       >
         <div>
-          <span className=" text-stone-600 font-semibold ">Id</span>
+          <span className=" text-stone-600 font-semibold text-sm">Id</span>
         </div>
         <div>
-          <span className="text-stone-600 font-semibold ">Paid By</span>
+          <span className="text-stone-600 font-semibold text-sm">Payer</span>
         </div>
         <div>
-          <span className="text-stone-600 font-semibold ">Purpose</span>
+          <span className="text-stone-600 font-semibold text-sm">Purpose</span>
         </div>
         <div>
-          <span className="text-stone-600 font-semibold ">Amount</span>
+          <span className="text-stone-600 font-semibold text-sm">Amount</span>
         </div>
         <div>
-          <span className="text-stone-600 font-semibold ">Share</span>
+          <span className="text-stone-600 font-semibold text-sm">Share</span>
         </div>
       </div>
       <div
