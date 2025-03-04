@@ -11,13 +11,9 @@ function NewEntryForm({ users }) {
   const [selectedUsers, setSelectedUsers] = useState([]);
   const [paidBy, setPaidBy] = useState("");
 
-  const {
-    mutate: addNewEntry,
-    error,
-    isPending,
-  } = useMutation({
+  const { mutate: addNewEntry, isPending } = useMutation({
     mutationFn: addNewEntryAPI,
-    onSuccess: (data) => {
+    onSuccess: () => {
       navigate("/");
     },
     onError: (error) => {

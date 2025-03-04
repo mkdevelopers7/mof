@@ -22,6 +22,12 @@ function Entry() {
     },
     [handleLastEntryDate, entries]
   );
+  if (!entries) return;
+  const sortedEntries = [...entries].sort((a, b) => b.id - a.id);
+
+  // const sortedEntries = Array.isArray(entries)
+  //   ? [...entries].sort((a, b) => b.id - a.id)
+  //   : [];
 
   if (isPending) return <Loader />;
 
@@ -59,11 +65,9 @@ function Entry() {
           entries.length > 5 ? "overflow-y-scroll" : "overflow-y-hidden"
         }`}
       >
-        {entries
-          .sort((a, b) => b.id - a.id)
-          .map((entry, index) => (
-            <EntryItem entry={entry} index={index} key={entry.id} />
-          ))}
+        {sortedEntries.map((entry, index) => (
+          <EntryItem entry={entry} index={index} key={entry.id} />
+        ))}
       </div>
     </div>
   );

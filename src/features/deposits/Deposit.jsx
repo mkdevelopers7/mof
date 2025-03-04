@@ -8,6 +8,8 @@ function Deposit() {
     queryKey: ["deposits"],
     queryFn: fetchDepositsAPI,
   });
+  if (!deposits) return;
+  const sortedDeposits = deposits.sort((a, b) => b.id - a.id);
 
   if (isPendingDeposits) return <Loader />;
 
@@ -45,11 +47,9 @@ function Deposit() {
           deposits.length > 5 ? "overflow-y-scroll" : "overflow-y-hidden"
         }`}
       >
-        {deposits
-          .sort((a, b) => b.id - a.id)
-          .map((deposit, index) => (
-            <DepositItem deposit={deposit} index={index} key={deposit.id} />
-          ))}
+        {sortedDeposits.map((deposit, index) => (
+          <DepositItem deposit={deposit} index={index} key={deposit.id} />
+        ))}
       </div>
     </div>
   );
