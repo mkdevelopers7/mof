@@ -10,7 +10,7 @@
     @apply rounded-full border border-slate-200 px-4 py-2 text-sm transition-all duration-300 focus:outline-none focus:ring focus:ring-green-500 md:px-6 md:py-3;
   }
   .mainContainer {
-    @apply px-5 sm:max-w-[55rem] mx-auto;
+    @apply sm:px-5 sm:max-w-[55rem] mx-3 sm:mx-auto;
   }
   .loader {
     width: 45px;
