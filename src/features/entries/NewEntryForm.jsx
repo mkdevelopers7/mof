@@ -46,6 +46,7 @@ function NewEntryForm({ users }) {
       usersCharged: selectedUsers,
       paidBy: Number(paidBy),
       created_at: formData.date || new Date(),
+      details: formData.details || "",
     };
 
     addNewEntry(newEntry);

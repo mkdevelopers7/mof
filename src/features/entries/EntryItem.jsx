@@ -1,7 +1,8 @@
+import { formatDateShort } from "../../helpers";
 import { useUsers } from "../users/userContext";
 
 function EntryItem({ entry, index }) {
-  const { id, paidBy, purpose, totalAmount, usersCharged } = entry;
+  const { id, paidBy, purpose, totalAmount, usersCharged, created_at } = entry;
   const perHead = totalAmount / usersCharged.length;
 
   ///////
@@ -39,15 +40,20 @@ function EntryItem({ entry, index }) {
       <div>
         <span className="text-stone-600 text-[14px]">{perHead.toFixed(0)}</span>
       </div>
-      <div className="col-span-full flex items-center justify-end gap-2 text-[10px] font-normal">
-        {consumers.map((consumer, i) => (
-          <span
-            className="bg-slate-200 text-stone-500 pb-[1px] px-2 rounded-full"
-            key={i}
-          >
-            {consumer}
-          </span>
-        ))}
+      <div className="col-span-full flex items-center justify-end gap-2 text-[10px] font-normal space-x-2 ">
+        <div className="flex gap-1 items-center">
+          {consumers.map((consumer, i) => (
+            <span
+              className="bg-slate-200 text-stone-500 pb-[1px] px-2 rounded-full"
+              key={i}
+            >
+              {consumer}
+            </span>
+          ))}
+        </div>
+        <div className="text-[10px] font-normal text-stone-600">
+          {formatDateShort(created_at)}
+        </div>
       </div>
     </div>
   );
