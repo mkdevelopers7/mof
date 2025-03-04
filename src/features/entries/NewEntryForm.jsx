@@ -38,13 +38,14 @@ function NewEntryForm({ users }) {
     const data = new FormData(e.target);
     const formData = Object.fromEntries(data);
 
-    if (formData.key !== PassKey) alert("Wrong Access Key. Try Again");
+    if (formData.key !== PassKey) return alert("Wrong Access Key. Try Again");
 
     const newEntry = {
       totalAmount: Number(formData.totalAmount),
       purpose: formData.purpose,
       usersCharged: selectedUsers,
       paidBy: Number(paidBy),
+      created_at: formData.date || new Date(),
     };
 
     addNewEntry(newEntry);
@@ -54,7 +55,7 @@ function NewEntryForm({ users }) {
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4 px-5 py-6">
       <div className="grid grid-cols-[1fr] sm:grid-cols-[160px,1fr] gap-2 items-center sm:gap-4">
-        <label>Total Amount Spent:</label>
+        <label>Total Amount Spent</label>
         <input
           className="input2"
           type="number"
@@ -64,18 +65,19 @@ function NewEntryForm({ users }) {
         />
       </div>
       <div className="grid grid-cols-[1fr] sm:grid-cols-[160px,1fr] gap-2 items-center sm:gap-4">
-        <label>Purpose of Payment:</label>
+        <label>Purpose of Payment</label>
         <select name="purpose" className="input2">
           <option value="breakfast">Breakfast</option>
           <option value="lunch">Lunch</option>
           <option value="dinner">Dinner</option>
-          <option value="dinner">Adjustment</option>
-          <option value="dinner">Miscellaneous</option>
+          <option value="room">Room Expense</option>
+          <option value="adjustment">Adjustment</option>
+          <option value="miscellaneous">Miscellaneous</option>
         </select>
       </div>
 
       <div className="items-center grid grid-cols-[1fr] sm:grid-cols-[160px,1fr] gap-2 sm:gap-4">
-        <label>Paid By:</label>
+        <label>Paid By</label>
         <select
           className="input2 accent-green-500"
           value={paidBy}
@@ -93,7 +95,23 @@ function NewEntryForm({ users }) {
         </select>
       </div>
       <div className="items-center grid grid-cols-[1fr] sm:grid-cols-[160px,1fr] gap-2 sm:gap-4">
-        <label>Access Key:</label>
+        <label>Date</label>
+        <input className="input2" type="date" name="date" />
+      </div>
+      <div className="grid grid-cols-[1fr] sm:grid-cols-[160px,1fr] gap-2 items-center sm:gap-4">
+        <label>
+          Details <span className="text-sm text-slate-600">(Optional)</span>
+        </label>
+        <textarea
+          rows={3}
+          className="input2 rounded-xl"
+          type="text-area"
+          name="details"
+          placeholder="Write Related Details"
+        />
+      </div>
+      <div className="items-center grid grid-cols-[1fr] sm:grid-cols-[160px,1fr] gap-2 sm:gap-4">
+        <label>Access Key</label>
         <input
           className="input2"
           type="password"
@@ -105,7 +123,7 @@ function NewEntryForm({ users }) {
 
       {/* <div className="flex items-center gap-4"> */}
       <div className="items-center grid grid-cols-[1fr] sm:grid-cols-[160px,1fr] gap-2 sm:gap-4">
-        <legend>Consumers:</legend>
+        <legend>Consumers</legend>
         <div className="space-x-2">
           {users.map((user) => (
             <label key={user.id} className="text-sm">
@@ -127,7 +145,7 @@ function NewEntryForm({ users }) {
       </div>
 
       <div className="text-center sm:text-right">
-        <Button type="primary">Create Entry</Button>
+        <Button type="primary">Add Expense</Button>
       </div>
     </form>
   );

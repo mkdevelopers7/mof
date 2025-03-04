@@ -3,13 +3,14 @@ import Button from "../../ui/Button";
 import { useMutation } from "@tanstack/react-query";
 import { addUserAPI, PassKey } from "./userSlice";
 import { useNavigate } from "react-router-dom";
+import Loader from "../../ui/Loader";
 
 function FormAddUser() {
   const [name, setName] = useState("");
   const [initialBalance, setInitialBalance] = useState(0);
   const navigate = useNavigate();
 
-  const { mutate } = useMutation({
+  const { mutate, isPending } = useMutation({
     mutationFn: addUserAPI,
     onSuccess: () => {
       navigate("/");
@@ -23,10 +24,13 @@ function FormAddUser() {
     e.preventDefault();
     const data = new FormData(e.target);
     const formData = Object.fromEntries(data);
-    if (formData.key !== PassKey) alert("Wrong Access Key. Try Again");
+    if (formData.key !== PassKey) return alert("Wrong Access Key. Try Again");
 
     mutate(formData);
   }
+
+  if (isPending) return <Loader />;
+
   return (
     <div className="py-5 px-4  items-center">
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">

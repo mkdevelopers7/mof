@@ -32,13 +32,12 @@ export async function addNewEntryAPI(newEntry) {
 
   const { totalAmount, paidBy, usersCharged } = newEntry;
   const shareAmount = totalAmount / usersCharged.length;
-  console.log(25, (totalAmount / usersCharged.length).toFixed(0));
 
-  // const paidByMehran = paidBy === 7;
+  // const paidByMehran = paidBy === 15;
 
   await Promise.all(
     usersCharged.map(async (userId) => {
-      // if (paidByMehran && userId === 7) return;
+      // if (paidByMehran && userId === 15) return;
       let userShare = shareAmount;
       if (paidBy === userId)
         userShare = -(userShare * (usersCharged.length - 1));

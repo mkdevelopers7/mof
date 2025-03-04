@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import Loader from "../../ui/Loader";
 
 function Users() {
-  const { updateUsersContext } = useUsers();
+  const { updateUsersContext, totalBalance } = useUsers();
 
   const { data, isPending } = useQuery({
     queryKey: ["users"],
@@ -25,8 +25,13 @@ function Users() {
   if (data)
     return (
       <div className=" divide-y-[1px] px-3 py-3">
-        {data.map((user) => (
-          <UserItem user={user} key={user.id} />
+        {data.map((user, index) => (
+          <UserItem
+            user={user}
+            index={index}
+            key={user.id}
+            totalBalance={totalBalance}
+          />
         ))}
       </div>
     );

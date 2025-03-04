@@ -1,15 +1,33 @@
-function EntryItem({ entry }) {
+import { useUsers } from "../users/userContext";
+
+function EntryItem({ entry, index }) {
   const { id, paidBy, purpose, totalAmount, usersCharged } = entry;
   const perHead = totalAmount / usersCharged.length;
-  // return <div>Entry id:{entry.id}</div>;
+
+  ///////
+
+  const { users } = useUsers();
+  const userMap = users.reduce((acc, user) => {
+    acc[user.id] = user.name;
+    return acc;
+  }, {});
+
+  const consumers = usersCharged.map((userId) => userMap[userId]);
+
+  /////////
+
   return (
-    <div className="grid gap-2 grid-cols-[0.5fr,1fr,1fr,1fr,1fr] items-center py-2 px-3 border-b-[1px]">
+    <div
+      className={`${
+        index % 2 === 0 ? "bg-[#d5dce4]" : ""
+      }  grid gap-2 grid-cols-[0.5fr,1fr,1fr,1fr,1fr] items-center py-2 space-y-1 px-3 `}
+    >
       <div>
         <span className=" text-stone-600 text-[14px]">{id}</span>
       </div>
       <div>
         <span className="text-stone-600 text-[14px] capitalize">
-          {paidBy === "7" ? "Mehran" : ""}
+          {paidBy === "15" ? "Mehran" : ""}
         </span>
       </div>
       <div>
@@ -20,6 +38,16 @@ function EntryItem({ entry }) {
       </div>
       <div>
         <span className="text-stone-600 text-[14px]">{perHead.toFixed(0)}</span>
+      </div>
+      <div className="col-span-full flex items-center justify-end gap-2 text-[10px] font-normal">
+        {consumers.map((consumer, i) => (
+          <span
+            className="bg-slate-200 text-stone-500 pb-[1px] px-2 rounded-full"
+            key={i}
+          >
+            {consumer}
+          </span>
+        ))}
       </div>
     </div>
   );

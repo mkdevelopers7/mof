@@ -35,4 +35,24 @@
       background-position: 0% 50%, 50% 50%, 100% 100%;
     }
   }
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: theme(colors.slate.300);
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: theme(colors.slate.400);
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: theme(colors.slate.500);
+  }
 }

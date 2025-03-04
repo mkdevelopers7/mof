@@ -1,19 +1,8 @@
-import { useQuery } from "@tanstack/react-query";
-import NewEntryForm from "./NewEntryForm";
-import { fetchUsers } from "../users/userSlice";
-import Loader from "../../ui/Loader";
 import Navigation from "../../ui/Navigation";
 import SideBar from "../../ui/SideBar";
+import AddDepositForm from "./AddDepositForm";
 
-function NewEntry() {
-  // const { users } = useUsers();
-  const { data: users, isPending } = useQuery({
-    queryKey: ["users2"],
-    queryFn: fetchUsers,
-  });
-  if (isPending) return <Loader />;
-  if (!users) return;
-
+function AddDeposit() {
   return (
     <>
       <Navigation />
@@ -22,14 +11,14 @@ function NewEntry() {
         <div className="mainContainer bg-slate-300 rounded-[15px] mx-auto w-[80%]">
           <header className="border-b-4 px-3 py-3 border-slate-200">
             <h1 className="text-xl sm:text-2xl text-center text-green-500  font-semibold uppercase">
-              New Expense
+              Make New Deposit
             </h1>
           </header>
-          <NewEntryForm users={users} />
+          <AddDepositForm />
         </div>
       </div>
     </>
   );
 }
 
-export default NewEntry;
+export default AddDeposit;
