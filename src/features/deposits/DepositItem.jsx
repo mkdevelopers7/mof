@@ -23,7 +23,7 @@ function DepositItem({ deposit, index }) {
         <span className="text-stone-600 text-[14px]">{amount}</span>
       </div>
       <div>
-        <span className="text-stone-600 font-semibold text-[10px]">
+        <span className="text-stone-600 font-semibold sm:font-normal sm:text-[14px] text-[10px]">
           {dateFinal}
         </span>
       </div>

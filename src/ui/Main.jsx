@@ -10,7 +10,7 @@ function Main() {
       {/*{<Ledger />} */}
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Ledger />} />
+          <Route path="/" index element={<Ledger />} />
           <Route path="/entry" element={<NewEntry />} />
           <Route path="/deposit" element={<AddDeposit />} />
           <Route path="/adduser" element={<AddUser />} />
