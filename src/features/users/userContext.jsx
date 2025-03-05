@@ -4,7 +4,7 @@ const UserContext = createContext();
 function UserProvider({ children }) {
   const [users, setUsers] = useState([]);
   const [totalBalance, setTotalBalance] = useState(0);
-  const [lastEntryDate, setLastEntryDate] = useState("Loading...");
+  const [lastEntryDate, setLastEntryDate] = useState("Loading");
   function updateUsersContext(users) {
     const calcTotalExpenses = users.reduce((sum, cur) => {
       if (cur.id === 15) return sum + 0;

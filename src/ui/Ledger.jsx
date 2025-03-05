@@ -7,6 +7,7 @@ import SideBar from "./SideBar";
 
 function Ledger() {
   const { lastEntryDate } = useUsers();
+
   return (
     <>
       <Navigation />
