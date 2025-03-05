@@ -6,9 +6,9 @@ import { useEffect } from "react";
 import Loader from "../../ui/Loader";
 
 function Users() {
-  const { updateUsersContext, totalBalance, lastEntryDate } = useUsers();
+  const { updateUsersContext, totalBalance } = useUsers();
 
-  const { data, isPending } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ["users"],
     queryFn: fetchUsers,
   });
@@ -19,9 +19,7 @@ function Users() {
     [data, updateUsersContext]
   );
 
-  if (!data) return;
-  if (isPending) return <Loader />;
-  if (lastEntryDate === "Loading") return <Loader />;
+  if (isLoading) return <Loader />;
 
   if (data)
     return (
